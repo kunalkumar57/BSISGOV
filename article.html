@@ -1,0 +1,160 @@
+<!-- article.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - BSISGOV</title>
+    <link rel="style" href="style.css">
+</head>
+<body>
+    <header>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">News Portal</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Admin Panel</h2>
+        <div class="admin-section">
+            <h3>Create/Edit Article</h3>
+            <form>
+                <div class="form-group">
+                    <label for="headline">Headline</label>
+                    <input type="text" id="headline" name="headline" placeholder="Enter article headline" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" placeholder="Enter article content" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image Upload</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="alt_text">Image Alt Text</label>
+                    <input type="text" id="alt_text" name="alt_text" placeholder="Enter alt text for image">
+                </div>
+                <div class="form-group">
+                    <label for="publication_date">Publication Date/Time</label>
+                    <input type="datetime-local" id="publication_date" name="publication_date">
+                </div>
+                <div class="form-group">
+                    <label for="source_credit">Source/Credit (Optional)</label>
+                    <input type="text" id="source_credit" name="source_credit" placeholder="Enter source or credit">
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        <option value="draft">Draft</option>
+                        <option value="published">Published</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" disabled>Save</button>
+                    <a href="admin.html" class="btn">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="admin-section">
+            <h3>Manage Articles</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Headline</th>
+                        <th>Status</th>
+                        <th>Publication Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>City Unveils New Public Park</td>
+                        <td>Published</td>
+                        <td>2025-08-20</td>
+                        <td>
+                            <a href="admin.html">Edit</a>
+                            <a href="#" class="delete" onclick="alert('Delete functionality disabled in static version')">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Tech Conference 2025 Highlights</td>
+                        <td>Published</td>
+                        <td>2025-08-19</td>
+                        <td>
+                            <a href="admin.html">Edit</a>
+                            <a href="#" class="delete" onclick="alert('Delete functionality disabled in static version')">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+   
+    </header>
+    <main id="article-content">
+        <!-- Article will be loaded here via JS -->
+    </main>
+    
+  <main>
+    <article class="news-article">
+      <!-- Featured Image -->
+      <img src="newstoday.jpg" alt="Startup Image" class="featured-image">
+
+      <!-- Title -->
+      <h1>Startup X raises $5M seed funding</h1>
+
+      <!-- Meta Info -->
+      <p class="meta">
+        Published on <time datetime="2025-08-19">August 19, 2025</time>  
+        | By <span class="author">Admin</span>
+      </p>
+
+      <!-- Full Content -->
+      <div class="article-body">
+        <p>Startup X has successfully raised $5 million in a seed round led by ABC Ventures to expand its AI-driven platform. The company plans to use the funds for product development, hiring engineers, and expanding into new markets.</p>
+        <p>According to the founders, this funding will accelerate their mission to democratize artificial intelligence tools for small businesses worldwide.</p>
+        <p>More updates will follow as Startup X rolls out its expanded product suite.</p>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-buttons">
+        <p>Share this article:</p>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://example.com/article.html?id=1" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/intent/tweet?url=https://example.com/article.html?id=1&text=Startup%20News" target="_blank">Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/article.html?id=1" target="_blank">Facebook</a>
+      </div>
+    </article>
+  </main>
+
+    <footer>
+        <p>&copy; 2025 BSISGOV. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        loadArticle();
+    </script>
+</body>
+</html>

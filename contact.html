@@ -1,0 +1,204 @@
+ <style>
+    .contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1a73e8;
+}
+
+.contact p {
+    font-size: 1.1rem;
+}
+
+.contact-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+ </style>
+ 
+ 
+ 
+ 
+ <section class="contact">
+            <h2>Contact Us (संपर्क करें)</h2>
+            <p>Reach out to us at <a href="mailto:contact@aajtak.com" class="contact-link">contact@aajtak.com</a></p>
+        </section>
+        <!-- save as direction-layout.html -->
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>BSISGOV — News with Contact (Relative Box)</title>
+<style>
+  :root{
+    --maxw:1100px;
+    --accent:#0b6cf0;
+    --muted:#12e686;
+    --card-bg:#fff;
+    --glass: rgba(255,255,255,0.6);
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+    margin:0; background:#1a60eda3; color:#eb1c1c; padding:24px;
+    display:flex; justify-content:center;
+  }
+
+  .container{
+    width:100%; max-width:var(--maxw);
+    position:relative; /* here our contact-box will be positioned relative to this container */
+    display:block;
+  }
+
+  header{ margin-bottom:18px; }
+  header h1{ margin:0; font-size:20px; letter-spacing:.2px; }
+  header p{ margin:6px 0 0; color:var(--muted); font-size:14px; }
+
+  .layout{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+  }
+
+  /* main news column */
+  .news-col{
+    flex:1 1 0;
+    min-width:260px;
+    background:linear-gradient(180deg,#d9161663,#fbfdff);
+    border-radius:12px;
+    padding:16px;
+    box-shadow:0 6px 18px rgba(12, 85, 230, 0.06);
+  }
+
+  .article{
+    display:flex;
+    gap:12px;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #841414;
+    margin-bottom:12px;
+    background:var(--card-bg);
+  }
+  .thumb{
+    width:120px; height:72px; border-radius:8px; background:#e9eefc;
+    display:flex;align-items:center;justify-content:center;color:var(--muted);
+    font-size:13px;
+  }
+  .meta .title{ font-weight:700; margin-bottom:6px; font-size:15px; }
+  .meta .snippet{ color:var(--muted); font-size:14px; }
+
+  /* CONTACT BOX (positioned relative to .container) */
+  .contact-box{
+    width:320px;
+    min-width:240px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.95));
+    border-radius:12px;
+    padding:16px;
+    box-shadow:0 10px 30px rgba(8,20,60,0.09);
+    border:1px solid rgba(9, 14, 25, 0.04);
+    position:absolute; /* positioned relative to .container */
+    right:0;
+    top:48px;              /* aligns under header */
+    height: calc(100% - 48px);
+    max-height:600px;
+    overflow:auto;
+  }
+
+  .contact-box h3{ margin:0 0 8px; font-size:16px; }
+  .contact-box p{ margin:0 0 12px; color:var(--muted); font-size:14px; }
+  .contact-field{ display:block; width:100%; padding:10px 12px; margin-bottom:10px;
+    border-radius:8px; border:1px solid #25de11; font-size:14px; background:#c1ddef; }
+  .btn{
+    display:inline-block; padding:10px 14px; border-radius:8px; background:var(--accent);
+    color:#d533d5; text-decoration:none; font-weight:600; border:none; cursor:pointer;
+  }
+  .small-note{ font-size:13px; color:var(--muted); margin-top:10px; }
+
+  /* If container is narrow, make contact box stack under news */
+  @media (max-width:980px){
+    .layout{ flex-direction:column; }
+    .contact-box{
+      position:static;
+      width:auto;
+      height:auto;
+      max-height:none;
+      margin-top:14px;
+    }
+  }
+
+  /* small tweaks for tiny screens */
+  @media (max-width:420px){
+    .thumb{ display:none }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>BSISGOV — Startup News</h1>
+      <p>ताज़ा स्टार्टअप ख़बरें — हर दिन। Contact के लिए नीचे देखें।</p>
+    </header>
+
+    <div class="layout">
+      <main class="news-col" aria-live="polite">
+        <!-- sample articles -->
+        <article class="article">
+          <div class="thumb">Image</div>
+          <div class="meta">
+            <div class="title">Local SaaS raises $4M seed</div>
+            <div class="snippet">एक नया सॉफ़्टवेयर प्लेटफ़ॉर्म छोटे व्यवसायों के लिए—फ़ंड राउंड क्लोज़ हुआ।</div>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="thumb">Image</div>
+          <div class="meta">
+            <div class="title">AI startup launches beta</div>
+            <div class="snippet">बेटा वर्ज़न रेगुलर यूज़र्स के लिए खुल गया — फीचर्स देखें।</div>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="thumb">Image</div>
+          <div class="meta">
+            <div class="title">Acquisition: two startups merge</div>
+            <div class="snippet">दो कंपनियों का मर्ज़ — बाजार प्रतिक्रिया और भविष्य।</div>
+          </div>
+        </article>
+
+        <!-- add more articles as needed -->
+      </main>
+
+      <!-- Contact box is inside .container and absolutely positioned (relative to .container) -->
+      <aside class="contact-box" role="region" aria-label="Contact box">
+        <h3>Contact / News Tips</h3>
+        <p>हमें खबर भेजें या टिप दें — जल्दी जवाब मिलेगा।</p>
+
+        <!-- simple contact form (can be replaced by mailto link instead of real submit) -->
+        <form action="mailto:editor@bsisgov.example" method="post" enctype="text/plain">
+          <input class="contact-field" type="text" name="name" placeholder="आपका नाम" required>
+          <input class="contact-field" type="email" name="email" placeholder="ईमेल (reply के लिए)" required>
+          <input class="contact-field" type="text" name="subject" placeholder="Short subject" required>
+          <textarea class="contact-field" name="message" rows="5" placeholder="अपनी खबर या टिप यहाँ लिखें"></textarea>
+          <button class="btn" type="submit">Send (mailto)</button>
+        </form>
+
+        <div class="small-note">
+          या सीधे ईमेल करें: <a href="mailto:editor@bsisgov.example">editor@bsisgov.example</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

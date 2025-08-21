@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Admin Login - BSISGOV</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<h1>Admin Login</h1>
+<form method="post">
+  {{ form.csrf_token }}
+  <label>Username</label><br>{{ form.username(size=32) }}<br>
+  <label>Password</label><br>{{ form.password(size=32) }}<br><br>
+  {{ form.submit() }}
+</form>

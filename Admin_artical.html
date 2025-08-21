@@ -1,0 +1,27 @@
+<!doctype html>
+<title>Dashboard - BSISGOV</title>
+  <link rel="stylesheet" href="styles.css">
+<h1>Admin - Articles</h1>
+<p><a href="{{ url_for('admin_new') }}">+ New Article</a> | <a href="{{ url_for('admin_logout') }}">Logout</a></p>
+<table>
+  <thead><tr><th>Title</th><th>Status</th><th>Published</th><th>Actions</th></tr></thead>
+  <tbody>
+  {% for a in articles %}
+    <tr>
+      <td>{{ a.title }}</td>
+      <td>{{ a.status }}</td>
+      <td>{{ a.published_at }}</td>
+      <td>
+        <a href="{{ url_for('admin_edit', article_id=a.id) }}">Edit</a>
+        <form method="post" action="{{ url_for('admin_delete', article_id=a.id) }}" style="display:inline" onsubmit="return confirm('Delete?')">
+          {{ csrf_token() }}
+          <button type="submit">Delete</button>
+        </form>
+        {% if a.status=='published' %}
+          <a href="{{ url_for('view_article', article_id=a.id) }}" target="_blank">View</a>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
